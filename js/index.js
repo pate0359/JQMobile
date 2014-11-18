@@ -37,11 +37,11 @@ $(document).on("ready", function (ev) {
 			role: "dialog"
 		});
 		
-	});
+	});	
 
 	$(".prev").click(function (ev) {
 		ev.preventDefault();
-		localStorage.setItem("lastSeen", $(this).attr("href"));
+		localStorage.setItem("lastSeen", $(this).attr("href")) ;
 
 		$.mobile.pageContainer.pagecontainer("change", $(this).attr("href"), {
 			changeHash: false,
