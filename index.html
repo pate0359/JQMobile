@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>jQuery Mobile: Theme Download</title>
-	<link rel="stylesheet" href="themes/mytheme.min.css" />
+	<link rel="stylesheet" href="themes/jqmAutoBio.css" />
+	<link rel="stylesheet" href="themes/jqmAutoBio.min.css"/>
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -18,7 +19,7 @@
 <body>
 
 	<!-- Main/Home Page -->
-	<div data-role="page" data-theme="a" id="homePage" class="homePage">
+	<div data-role="page" data-theme="c" id="homePage" class="homePage">
 		<div data-role="header" style="word-wrap:break-word">
 			<h1>Autobiographical Essay</h1>
 			<a href="#infoPage" id="infoButton" data-role="button" data-icon="info" data-transition="flip" class="ui-btn-right">Me</a>
@@ -30,12 +31,13 @@
 				<a href="#" id="startbtn" data-role="button">Start Tutorial</a>
 			</div>
 			<div data-role="footer">
+				<p>Copyright © 2014 Algonquin MAD&D </p>
 			</div>
 		</div>
 	</div>
 	
 	<!-- Info Page -->
-	<div data-role="page" data-theme="a" id="infoPage" class="infoPage">
+	<div data-role="page" data-theme="c" id="infoPage" class="infoPage">
 		<div data-role="header">
 			<h1>Info Page</h1>
 			<a href="#homePage" id="homeButton" data-role="button" data-icon="home" data-transition="flip" data-direction="reverse" class="ui-btn-right">Home</a>
@@ -47,12 +49,13 @@
 				<p>source : <a href="http://www.wikihow.com/Write-an-Autobiographical-Essay">wikihow</a> </p>
 			</div>
 			<div data-role="footer">
+				<p>Copyright © 2014 Algonquin MAD&D </p>
 			</div>
 		</div>
 	</div>
 	
 	<!-- Dialog Templete-->
-	<div data-role="dialog" data-theme="a" id="dialogTemp" class="dialog" data-close-btn="right">
+	<div data-role="dialog" data-theme="c" id="dialogTemp" class="dialog" data-close-btn="right">
 		<div data-role="header" id="header">
 			<h1></h1>
 		</div>
@@ -70,6 +73,11 @@
 			</div>
 		</div>
 	</div>
+	
+<!--
+	<div class="footer">
+	</div>
+-->
 				
 </body>
 </html>

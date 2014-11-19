@@ -45,7 +45,9 @@ $(document).on("ready", function (ev) {
 		var idNext = "#dialog" + (i + 1);
 		var idPrev = "#dialog" + (i - 1);
 		$dialog.attr("id", idD);
-		$dialog.find("img").attr("src","../img/"+i+".jpg");
+			 
+		if(i<=10) $dialog.find("img").attr("src","../img/"+i+".jpg");
+			 
 		$dialog.find(".prev").attr("href", idPrev);
 		$dialog.find(".next").attr("href", idNext);
 		
@@ -78,7 +80,7 @@ $(document).on("ready", function (ev) {
 
 	$(".next").click(function (ev) {
 		ev.preventDefault();
-		localStorage.setItem("lastSeen", $(this).attr("href"));
+		//localStorage.setItem("lastSeen", $(this).attr("href"));
 
 		$.mobile.pageContainer.pagecontainer("change", $(this).attr("href"), {
 			changeHash: false,
@@ -88,7 +90,7 @@ $(document).on("ready", function (ev) {
 
 	$(".prev").click(function (ev) {
 		ev.preventDefault();
-		localStorage.setItem("lastSeen", $(this).attr("href")) ;
+		//localStorage.setItem("lastSeen", $(this).attr("href")) ;
 
 		$(this).find("#header h1").append($(this).attr("id")+" of "+totalPages);
 		$.mobile.pageContainer.pagecontainer("change", $(this).attr("href"), {
@@ -99,11 +101,17 @@ $(document).on("ready", function (ev) {
 
 	$("#startbtn").on("click", function (ev) {
 		
+		//localStorage.setItem("lastSeen", "#dialog1") ;
 		var lastSeenId = localStorage.getItem("lastSeen");
 		
-		if (!lastSeenId) {
+		if (!lastSeenId || lastSeenId==="#dialog12") {
 			lastSeenId = "#dialog1";
 		}
 		$("#startbtn").attr("href",lastSeenId);
+	});
+
+	/* Dialog close button clicked	*/
+	$(".dialog").bind("pagehide",function(){
+		localStorage.setItem("lastSeen", "#"+$(this).attr("id")) ;
 	});
 });
