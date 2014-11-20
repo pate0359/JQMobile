@@ -1,3 +1,4 @@
+var LOCAL_STORAGE_KEY = "LASTSEEN_PATE0359"
 var totalPages=12;
 var arrTitle = ["Gather all your ideas",
 					  "Begin with an engaging sentence that captures the reader's attention",
@@ -102,7 +103,7 @@ $(document).on("ready", function (ev) {
 	$("#startbtn").on("click", function (ev) {
 		
 		//localStorage.setItem("lastSeen", "#dialog1") ;
-		var lastSeenId = localStorage.getItem("lastSeen");
+		var lastSeenId = localStorage.getItem(LOCAL_STORAGE_KEY);
 		
 		if (!lastSeenId || lastSeenId==="#dialog12") {
 			lastSeenId = "#dialog1";
@@ -112,6 +113,6 @@ $(document).on("ready", function (ev) {
 
 	/* Dialog close button clicked	*/
 	$(".dialog").bind("pagehide",function(){
-		localStorage.setItem("lastSeen", "#"+$(this).attr("id")) ;
+		localStorage.setItem(LOCAL_STORAGE_KEY, "#"+$(this).attr("id")) ;
 	});
 });
