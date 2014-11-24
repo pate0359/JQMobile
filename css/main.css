@@ -1,14 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/****************************
-		Override theme
-****************************/
-
 .dialog img
 {
 	width: 100%;
 	border: 1px solid #f4f4f2;
+	box-shadow: 1px 1px 1px #888888;
 }
 .dialog h4
 {
@@ -19,6 +16,20 @@
 {
 	padding-top: 0%;
 }
+.prev, .next
+{
+/*	width: 96%;*/
+/*	border: 1px solid #f4f4f2;*/
+	border-right: 0px;
+	margin-right: 0px;
+/*	margin: 0%;*/
+/*	padding: 0%;*/
+}
+
+/****************************
+		Override theme
+****************************/
+
 
 .ui-header .ui-title, .ui-footer .ui-title {
     text-overflow: clip;
@@ -39,33 +50,32 @@
 	margin-left: 10px;
 }
 
-.dialog [data-role=footer] nav
-{
-	margin: 0px;
-	padding: 0px;
-	
-}
 .dialog [data-role=footer] nav li
 {
 	border-left: 0px;
 }
 
-.prev, .next
+div[data-role=navbar] .prev
 {
-/*	width: 96%;*/
-	border: 1px solid #f4f4f2;
-	border-right: 0px;
-	margin-right: 0px;
-/*	margin: 0%;*/
-/*	padding: 0%;*/
+/*	margin: 0;*/
+/*	padding: 2em 0;*/
+	border: 0;
+/*	outline: 0;*/
+/*	width: 100%;*/
+/*	box-sizing: border-box;*/
+	box-shadow: inset -1px 0 0 #666, inset 0 -1px 0 #666, inset 1px 0 0 #666, inset 0 1px 0 #666;
 }
 
+div[data-role=navbar] .next
+{
+	border: 0;
+	box-shadow: inset -1px 0 0 #828282, inset 0 -1px 0 #828282, inset -1px 0 0 #828282, inset 0 1px 0 #828282;
+}
 
 .dialog [data-role=footer]
 {
 	padding: 0px;
 }
-
 
 #homePage [data-role=footer] p,
 #infoPage [data-role=footer] p
@@ -96,8 +106,6 @@ body
 	background-color: red;
 } */
 
-
-
 html, body {
   margin: 0;
   padding: 0;
@@ -110,7 +118,7 @@ html, body {
 }
 
 [data-role=content] {
-  padding-bottom: 30px; /* based on how tall your footer is and how much gap you want */
+  padding-bottom: 30px;
 }
 
 #homePage [data-role=footer],
@@ -120,7 +128,7 @@ html, body {
   bottom: 0;
 	left: 0;
   width: 100%;
-  height: 30px /* this can be configurable, or omitted, as long as the above padding-bottom is at least as much as the height of the footer is */
+  height: 30px;
 }
 
 

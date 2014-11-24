@@ -38,7 +38,6 @@ $(document).on("mobileinit", function () {
 
 $(document).on("ready", function (ev) {
 	//page is ready to do stuff like have event listeners on buttons
-
 	for (var i = 1; i <= totalPages; i++) {
 		var $dialog = $('#dialogTemp').clone(true);
 
@@ -46,13 +45,14 @@ $(document).on("ready", function (ev) {
 		var idNext = "#dialog" + (i + 1);
 		var idPrev = "#dialog" + (i - 1);
 		$dialog.attr("id", idD);
-			 
+			
+		// add images to dialog
 		if(i<=10) $dialog.find("img").attr("src","../img/"+i+".jpg");
 			 
 		$dialog.find(".prev").attr("href", idPrev);
 		$dialog.find(".next").attr("href", idNext);
 		
-		$dialog.ready(function() {
+		$dialog.ready(function() { // Add content to dialog
   			// Handler for .ready() called.
 			$dialog.find("#header h1").append(i+" of "+totalPages);
 			$dialog.find("#content h4").append(arrTitle[i-1]);
@@ -60,14 +60,15 @@ $(document).on("ready", function (ev) {
 		});
 
 		if (i === 1) { //First dialog
-			$dialog.find(".prev").addClass('ui-disabled'); //attr("disabled","true"); //remove();
+			$dialog.find(".prev").addClass('ui-disabled');
 
 		} else if (i == totalPages-1) { // Tips dialog
 			
 			$dialog.find("img").remove();
 			$dialog.find("#content p").remove();
 			$dialog.find("#content").append("<ul><li>When writing a personal statement about your life, it’s best to be simple and stay straightforward. Avoid using five words where three will do.</li><li>If you have to use a thesaurus, chances are the reader’s not going to know exactly what the words mean so stick with simple vocabulary.</li><li>Just be yourself, not who you think the judges want you to be. Your personal statement is an autobiography that speaks about your life, your experiences, and your reflections, so remember to tell the truth.</li><li>Don’t have to make up situations or add fluff to tell a poignant story.</li></ul>");
-		}else if (i == totalPages) {
+		
+		}else if (i == totalPages) { // Last dialog
 		
 			$dialog.find(".next").addClass('ui-disabled');
 			$dialog.find("#content h4").remove();
@@ -79,6 +80,7 @@ $(document).on("ready", function (ev) {
 		$("body").append($dialog);
 	}
 
+	/* Next clicked	*/
 	$(".next").click(function (ev) {
 		ev.preventDefault();
 		//localStorage.setItem("lastSeen", $(this).attr("href"));
@@ -89,6 +91,7 @@ $(document).on("ready", function (ev) {
 		});		
 	});	
 
+	/* Previous clicked	*/
 	$(".prev").click(function (ev) {
 		ev.preventDefault();
 		//localStorage.setItem("lastSeen", $(this).attr("href")) ;
@@ -100,9 +103,9 @@ $(document).on("ready", function (ev) {
 		});
 	});
 
+	/* Start Tutorial	*/
 	$("#startbtn").on("click", function (ev) {
 		
-		//localStorage.setItem("lastSeen", "#dialog1") ;
 		var lastSeenId = localStorage.getItem(LOCAL_STORAGE_KEY);
 		
 		if (!lastSeenId || lastSeenId==="#dialog12") {
