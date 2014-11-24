@@ -47,7 +47,7 @@ $(document).on("ready", function (ev) {
 		$dialog.attr("id", idD);
 			
 		// add images to dialog
-		if(i<=10) $dialog.find("img").attr("src","../img/"+i+".jpg");
+		if(i<=10) $dialog.find("img").attr("src","img/"+i+".jpg");
 			 
 		$dialog.find(".prev").attr("href", idPrev);
 		$dialog.find(".next").attr("href", idNext);
